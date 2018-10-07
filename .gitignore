@@ -1,0 +1,6 @@
+.vscode
+*.jpg
+
+server/node_modules/*
+server/dist/*
+
