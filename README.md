@@ -2,13 +2,14 @@
 
 The goal of this test is not to evaluate how fast you deliver results but rather your problem solving and decision making skills.
 
-For this test, we do not provide design mockups in order to let the developer express their Front-end knowledge, but we expect  you to come up with a clean and easy to navigate user interface.
+For this test, we do not provide design mockups in order to let the developer express their Front-end knowledge, but we expect you to come up with a clean and easy to navigate user interface.
 
 If you get in "the zone" while working on the test and feel that you can do more then the minimum requirements of the task, please feel free to impress us with your skills and knowhow. It will not go unnoticed.
 
 Feel free to use packages, libraries, Frameworks and even starters/code generators or code snippets, but please mention any code that is not yours and justify the use in a sentence or two.
 
 We expect you to use the following technologies for the Front-end:
+
 - ReactJS
 - Redux(if you judge needed)
 - Redux Sagas (if you judge needed)
@@ -17,12 +18,12 @@ We expect you to use the following technologies for the Front-end:
 - Axios
 
 For the Backend please choose one of the following:
+
 - NodeJS
 - Spring
 - Python(Jango or Flask).
 
 We highly apprecaite candidates who deliver their projects on a containerized environment using Docker (Docker-compose Kubernates are also welcome).
-
 
 ### We Will be evaluating you on the following:
 
@@ -71,3 +72,8 @@ Please write tests wherever and whenever you feel adequate
 `img3.jpg Photo by Carl Heyerdahl on Unsplash`
 
 `img4.jpg Photo by Tim Gouw on Unsplash`
+
+#Setup the DB:
+
+- mongod --dbpath=./data
+- mongoimport --db nanos --collection campaigns --file ./data/data.json --jsonArray
