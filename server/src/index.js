@@ -2,6 +2,7 @@ import fs from 'fs';
 import util from 'util'
 import config from './config';
 import db from './db';
+import app from './app';
 
 const readFile = util.promisify(fs.readFile);
 
@@ -12,10 +13,11 @@ const readFile = util.promisify(fs.readFile);
     const seedFile = await readFile('/../data/data.json');
     const campaignsToSeed = JSON.parse(seedFile);
     await db.seedCampaigns(campaignsToSeed);
-    
-    const campaigns = await db.getCampaigns();
-  } catch (e) {
-    console.error(e);
+
+    app.listen(config.PORT);
+   
+  } catch (e) {    
     db.disconnect();
+    throw e;
   }
 })();
