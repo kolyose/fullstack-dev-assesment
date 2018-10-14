@@ -24,6 +24,13 @@ app.use(async (ctx, next) => {
 // Static files
 app.use(serve(path.resolve('./public')));
 
+app.use(async (ctx, next) => {
+  ctx.set('Access-Control-Allow-Origin', '*');
+  ctx.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  ctx.set('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS, HEAD');
+  await next();
+});
+
 // Routing
 app.use(router.routes());
 
