@@ -1,5 +1,7 @@
-export default {
-  ERROR: 'ERROR',
-  GET_CAMPAIGNS: 'GET_CAMPAIGNS',
-  SET_CAMPAIGNS: 'SET_CAMPAIGNS'
-};
+import * as root from './root';
+import * as campaigns from './campaigns';
+
+export {
+  root,
+  campaigns
+}

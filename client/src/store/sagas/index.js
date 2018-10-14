@@ -1,16 +1,17 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import API from '../../api';
-import actionTypes from '../actions/types';
+import * as actionTypes from '../actions/types';
 
 function* getCampaigns() {
   try {
     const campaigns = yield call(API.getCampaigns);
-    yield put({ type: actionTypes.SET_CAMPAIGNS, payload: { campaigns }});
+    yield put({ type: actionTypes.campaigns.SET_CAMPAIGNS, payload: { campaigns }});
   } catch (e) {
-    yield put({ type: actionTypes.ERROR, message: e.message});
+    const { message } = e;
+    yield put({ type: actionTypes.root.ERROR, payload: { message }});
   }
 }
 
 export default function* () {
-  yield takeLatest(actionTypes.GET_CAMPAIGNS, getCampaigns);
+  yield takeLatest(actionTypes.campaigns.GET_CAMPAIGNS, getCampaigns);
 }

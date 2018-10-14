@@ -1,4 +1,4 @@
-import actionTypes from './types';
+import { campaigns as actionTypes } from './types';
 
 export const getCampaigns = () => ({
   type: actionTypes.GET_CAMPAIGNS

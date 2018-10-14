@@ -1,4 +1,4 @@
-import actionTypes from '../actions/types';
+import { campaigns as actionTypes } from '../actions/types';
 
 const initialState = {
   list: [],

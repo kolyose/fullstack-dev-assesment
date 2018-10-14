@@ -1,0 +1,2 @@
+export const GET_CAMPAIGNS = 'GET_CAMPAIGNS';
+export const SET_CAMPAIGNS = 'SET_CAMPAIGNS';
