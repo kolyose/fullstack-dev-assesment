@@ -1,11 +1,14 @@
 import axios from 'axios';
-import { BASE_URL } from '../config';
+import config from './../config';
 
 const instance = axios.create({
-  baseURL: BASE_URL
+  baseURL: config.BASE_URL
 });
 
-const getCampaigns = () => instance.get('/campaigns');
+const getCampaigns = async () => {
+  const response = await instance.get('/campaigns');
+  return response.data;
+};
 
 export default {
   getCampaigns
