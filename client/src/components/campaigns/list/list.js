@@ -1,9 +1,11 @@
 import React from 'react';
-import CampaignListItem from './campaignListItem';
+import CampaignListItem from './item';
+
+import List from '@material-ui/core/List';
 
 const CampaignsList = ({ campaigns }) => (
   <div>
-    <ul>
+    <List>
     { 
       campaigns.map(campaign => (
         <CampaignListItem
@@ -12,7 +14,7 @@ const CampaignsList = ({ campaigns }) => (
         />
       ))
     }
-    </ul>
+    </List>
   </div>
 );
 
