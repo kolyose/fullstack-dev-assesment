@@ -21,6 +21,13 @@ export default (state=initialState, action) => {
         list: campaigns
       }
     }
+    case actionTypes.ADD_CAMPAIGN: {
+      const { campaign } = action.payload;
+      return {
+        ...state,
+        list: [...state.list, campaign]
+      }
+    }
     default: {
       return state;
     }

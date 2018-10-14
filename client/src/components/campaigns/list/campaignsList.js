@@ -1,17 +1,18 @@
 import React from 'react';
-
-import CampaignsDetails from './../details';
+import CampaignListItem from './campaignListItem';
 
 const CampaignsList = ({ campaigns }) => (
   <div>
+    <ul>
     { 
       campaigns.map(campaign => (
-        <CampaignsDetails
+        <CampaignListItem
           key={ campaign.id }
           campaign={ campaign }
         />
       ))
     }
+    </ul>
   </div>
 );
 

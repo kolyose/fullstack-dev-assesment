@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actionCreators from './../../store/actions';
+import { getCampaigns } from './../../store/actions';
 
 import CampaignsList from './list';
 import Spinner from './../spinner';
 
 class Campaigns extends Component {
   componentDidMount() {
-    this.props.getCampaigns();
+    const { campaigns } = this.props;
+    if (!campaigns || !campaigns.length) {
+      this.props.getCampaigns();
+    }
   }
 
   render() {
@@ -27,4 +30,4 @@ const mapStateToProps = ({ campaigns }) => ({
   isLoading: campaigns.isLoading
 });
 
-export default connect(mapStateToProps, actionCreators)(Campaigns);
+export default connect(mapStateToProps, { getCampaigns })(Campaigns);

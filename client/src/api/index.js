@@ -10,6 +10,12 @@ const getCampaigns = async () => {
   return response.data;
 };
 
+const getCampaignById = async (id) => {
+  const response = await instance.get(`/campaigns/${id}`);
+  return response.data;
+};
+
 export default {
-  getCampaigns
+  getCampaigns,
+  getCampaignById
 }
