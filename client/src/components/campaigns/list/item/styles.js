@@ -7,32 +7,25 @@ const styles = theme => ({
   link: {
     textDecoration: "none"
   },
-  card: {
-    backgroundColor: theme.palette.background.default,
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    width: '100%',
+  paper: {
+    minWidth: '300px',
+    margin: theme.spacing.unit,
+    backgroundColor: theme.palette.background.default,  
     '&:hover': {
       backgroundColor: grey['300'],
     },
   },
-  details: {
-    display: 'flex',
-    flexFlow: 'column wrap',
-    justifyContent: 'flex-end',
-  },
   price: {
-    display: 'flex',
-    justifyContent: 'flex-end',
+    margin: theme.spacing.unit/3,
+    fontStyle: 'italic',
   },
   platformIconsList: {
     display: 'flex',
     listStyleType: 'none'
   },
   platformIcon: {
-    height: 16,
-    margin: "0 2px",
+    height: 16,    
+    margin: theme.spacing.unit/3,
     width: 16
   },
   statusScheduled: {

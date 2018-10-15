@@ -1,11 +1,11 @@
 import React from 'react';
 import CampaignListItem from './item';
 
-import List from '@material-ui/core/List';
+import Grid from '@material-ui/core/Grid';
 
 const CampaignsList = ({ campaigns }) => (
   <div>
-    <List>
+    <Grid container justify="space-evenly">
     { 
       campaigns.map(campaign => (
         <CampaignListItem
@@ -14,7 +14,7 @@ const CampaignsList = ({ campaigns }) => (
         />
       ))
     }
-    </List>
+    </Grid>
   </div>
 );
 
