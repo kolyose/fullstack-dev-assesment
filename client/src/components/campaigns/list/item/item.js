@@ -1,36 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// components
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-
-// icons
-import ScheduledIcon from '@material-ui/icons/Schedule';
-import DeliveringIcon from '@material-ui/icons/Update';
-import EndedIcon from '@material-ui/icons/CheckCircle';
+import { renderIconByStatus } from './../../../helpers';
 
 import styles from './styles';
-
-
-const renderIconByStatus = (status, classes) => {
-  switch(status) {
-    case 'Delivering': {
-      return <DeliveringIcon className={ classes.statusDelivering }/>;
-    }
-    case 'Ended': {
-      return <EndedIcon className={ classes.statusEnded }/>;
-    }
-    case 'Scheduled': {
-      return <ScheduledIcon className={ classes.statusScheduled }/>;
-    }
-    default:
-      return null;
-  }
-};
 
 const resolveContext = require.context('../../../../assets', true);  
 

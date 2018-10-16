@@ -1,5 +1,5 @@
 import Campaigns from './Campaigns';
-import CampaignDetails from './CampaignDetails';
+import CampaignDetails from './details';
 
 export {
   Campaigns,
