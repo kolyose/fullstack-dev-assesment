@@ -80,8 +80,8 @@ class CampaignDetails extends Component {
                     </Hidden>
                     <div className={ classes.platformStatus }>
                       <Hidden xsDown>
-                        <Typography variant="subtitle2" className={ classes[`status${campaign.status}`] }>
-                          { campaign.status }
+                        <Typography variant="subtitle2" className={ classes[`status${platformData.status}`] } paragraph>
+                          { platformData.status }
                         </Typography>
                       </Hidden>
                       { renderIconByStatus(platformData.status, classes) }
@@ -108,16 +108,16 @@ class CampaignDetails extends Component {
                   <ExpansionPanelDetails className={ classes.platformDetails }>
                     <div className={ classes.platformImage } style={
                       { 
-                        width: '100%',
+                        width: 'auto',
                         height: 200,
                         backgroundSize: 'contain',
                         backgroundRepeat: 'no-repeat',
                         backgroundImage: `url(${config.BASE_URL}images/${platformData.creatives.image})`
                       }}
-                    />          
+                    />                             
                     <div className={ classes.platformCreatives }>
-                      <Typography variant="subtitle1" align="left">{ platformData.creatives.header }</Typography>
-                      <Typography variant="subtitle2" align="left" color="textSecondary">
+                      <Typography variant="subtitle1">{ platformData.creatives.header }</Typography>
+                      <Typography variant="subtitle2" color="textSecondary">
                         { platformData.creatives.description }
                       </Typography>
                     </div>

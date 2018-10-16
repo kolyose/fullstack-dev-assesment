@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 
 const CampaignsList = ({ campaigns }) => (
   <div>
-    <Grid container justify="space-evenly">
+    <Grid container>
     { 
       campaigns.map(campaign => (
         <CampaignListItem

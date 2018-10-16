@@ -30,6 +30,10 @@ const styles = theme => ({
     '& div': {
       marginTop: 'auto',
       marginBottom: 'auto',
+    },
+    '& p': {
+      marginTop: theme.spacing.unit/2,
+      marginBottom: 'auto',
     }
   },
   platformIcon: {       
@@ -43,8 +47,7 @@ const styles = theme => ({
   },
   platformStatus: {
     flexBasis: '10%',
-    display: 'flex',
-    flexDirection: 'row'
+    display: 'flex'
   },
   platformBudget: {
     flexBasis: '20%'
@@ -55,15 +58,17 @@ const styles = theme => ({
   platformDetails: {
     display: 'flex',
     flexWrap: 'wrap',
+    justifyContent: 'space-between'
   },
   platformImage: {  
     flexBasis: '25%',
-    flexGrow: 1
+    flexGrow: 1,
   },
   platformCreatives: { 
     display: 'flex',
     flexDirection: 'column',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    flexGrow: 2,
   },
   statusScheduled: {
     color: blueGrey['500']
