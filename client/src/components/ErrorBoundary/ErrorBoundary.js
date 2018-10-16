@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Modal from './../modal';
+import Typography from '@material-ui/core/Typography';
 
 class ErrorBoundary extends Component {
   state = { hasErrorOccured: false };
@@ -12,10 +13,15 @@ class ErrorBoundary extends Component {
   }
 
   render() {
-    if (this.state.hasErrorOccured || this.props.hasErrorOccured) {
+    const { hasErrorOccured, errorMessage } = this.props;
+    if (this.state.hasErrorOccured || hasErrorOccured) {
       return (
-        <Modal title="Error!">
-          <h2>{ this.props.errorMessage || "Something went wrong. Please, reload the page" }</h2>
+        <Modal open>
+          <Typography variant="h5" align="center" color="error" gutterBottom>Error!</Typography>
+          <Typography variant="h6" align="center" gutterBottom>
+            { errorMessage || "Something went wrong." }
+          </Typography>
+          <Typography variant="caption" align="center"> Please, reload the page </Typography>
         </Modal>
       );
     }
