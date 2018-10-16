@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { getCampaigns } from './../../store/actions';
-
 import CampaignsList from './list';
 import Spinner from './../spinner';
 
@@ -23,6 +23,11 @@ class Campaigns extends Component {
       </section>
     );
   }
+}
+
+Campaigns.propTypes = {
+  campaigns: PropTypes.arrayOf(PropTypes.object).isRequired,
+  isLoading: PropTypes.bool,
 }
 
 const mapStateToProps = ({ campaigns }) => ({

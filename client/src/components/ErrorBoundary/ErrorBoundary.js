@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import PropTypes from 'prop-types';
 import Modal from './../modal';
 import Typography from '@material-ui/core/Typography';
 
@@ -30,9 +30,18 @@ class ErrorBoundary extends Component {
   }
 }
 
+ErrorBoundary.propTypes = {
+  hasErrorOccured: PropTypes.bool,
+  errorMessage: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]),
+};
+
 const mapStateToProps = ({ root }) => ({
   hasErrorOccured: root.hasErrorOccured,
-  errorMessage: root.errorMessage
+  errorMessage: root.errorMessage,
 });
 
 export default connect(mapStateToProps)(ErrorBoundary);

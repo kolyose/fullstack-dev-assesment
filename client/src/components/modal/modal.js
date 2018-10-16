@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 
@@ -22,5 +22,14 @@ const ModalWrapper = ({ open, children, classes }) => (
     </div>
   </Modal>
 );
+
+ModalWrapper.propTypes = {
+  classes: PropTypes.object.isRequired,
+  open: PropTypes.bool.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]),
+};
 
 export default withStyles(styles)(ModalWrapper);

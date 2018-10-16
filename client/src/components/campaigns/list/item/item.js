@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -44,5 +45,17 @@ const CampaignListItem = ({ campaign, classes }) => (
     </Link>   
   </div>
 );
+
+CampaignListItem.propTypes = {
+  classes: PropTypes.object.isRequired,
+  campaign: PropTypes.shape({
+    id: PropTypes.number,
+    status: PropTypes.string,
+    name: PropTypes.string,
+    goal: PropTypes.string,
+    total_budget: PropTypes.number,
+    platforms:  PropTypes.object,
+  }).isRequired,
+};
 
 export default withStyles(styles)(CampaignListItem);

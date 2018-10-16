@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { getCampaignById } from './../../../store/actions';
 import config from './../../../config'
 
@@ -131,6 +132,18 @@ class CampaignDetails extends Component {
       </section>
     );
   }
+}
+
+CampaignDetails.propTypes = {
+  match: PropTypes.object.isRequired,
+  campaign: PropTypes.shape({
+    id: PropTypes.number,
+    status: PropTypes.string,
+    name: PropTypes.string,
+    goal: PropTypes.string,
+    total_budget: PropTypes.number,
+    platforms:  PropTypes.object,
+  }),
 }
 
 const mapStateToProps = ({ campaigns }, { match }) => ({
