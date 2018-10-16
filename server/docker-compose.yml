@@ -10,7 +10,7 @@ services:
       - ./src:/usr/src/app/src
       - ./public:/usr/src/app/public
     ports: 
-      - "8000:3000"
+      - "8000:8000"
     depends_on: 
       - "mongo"
     links:

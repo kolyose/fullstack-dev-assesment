@@ -14,5 +14,5 @@ VOLUME ['/usr/src/app/src']
 RUN mkdir /public
 VOLUME ['/usr/src/app/public']
 
-EXPOSE 3000
+EXPOSE 8000
 CMD ["npm", "start"]
