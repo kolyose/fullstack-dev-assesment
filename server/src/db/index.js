@@ -11,7 +11,7 @@ const connect = async dbPath => {
 };
 
 const disconnect = () => mongoose.connection.close();
-
+const reset = async () => Campaign.deleteMany();
 const getCampaigns = async () => Campaign.find();
 const getCampaignById = async id => Campaign.findOne({ id });
 const seedCampaigns = async (data) => Campaign.insertMany(data);
@@ -19,6 +19,7 @@ const seedCampaigns = async (data) => Campaign.insertMany(data);
 export default {
   connect,
   disconnect,
+  reset,
   getCampaigns,
   getCampaignById,
   seedCampaigns,

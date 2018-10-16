@@ -10,6 +10,8 @@ const readFile = util.promisify(fs.readFile);
   try {
     await db.connect(config.DB_PATH);   
 
+    // pre-poppulate DB with mocked data
+    await db.reset(); 
     const seedFile = await readFile('/../data/data.json');
     const campaignsToSeed = JSON.parse(seedFile);
     await db.seedCampaigns(campaignsToSeed);
