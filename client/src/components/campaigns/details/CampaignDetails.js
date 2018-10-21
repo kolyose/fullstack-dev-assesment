@@ -18,10 +18,9 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-import { renderIconByStatus } from './../../helpers';
+import { renderStatusIcon, renderPlatformIcon } from './../../helpers';
 import styles from './styles';
 
-const resolveContext = require.context('../../../assets', true);  
 const renderShortDate = milliseconds => {
   const date = new Date(milliseconds);
   return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
@@ -54,7 +53,7 @@ class CampaignDetails extends Component {
                         { campaign.status }
                       </Typography>
                     </Hidden>
-                    { renderIconByStatus(campaign.status, classes) }         
+                    { renderStatusIcon(campaign.status, classes) }         
                   </div>
                   <div className={ classes.budget }>
                     <Hidden xsDown>
@@ -72,7 +71,7 @@ class CampaignDetails extends Component {
                   <ExpansionPanelSummary className={ classes.platformSummary } expandIcon={ <ExpandMoreIcon/> }>
                     <figure className={ classes.platformIcon }>
                       <img alt={ platformName } 
-                        src={ resolveContext(`./${platformName}.svg`) }/>                  
+                        src={ renderPlatformIcon(platformName) }/>                  
                     </figure>    
                     <Hidden xsDown>               
                       <div className={ classes.platformName }>
@@ -85,7 +84,7 @@ class CampaignDetails extends Component {
                           { platformData.status }
                         </Typography>
                       </Hidden>
-                      { renderIconByStatus(platformData.status, classes) }
+                      { renderStatusIcon(platformData.status, classes) }
                     </div>
                     <div className={ classes.platformBudget }>
                       <Typography variant="subtitle2" className={ classes.price }>

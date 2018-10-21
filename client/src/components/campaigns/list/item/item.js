@@ -6,11 +6,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import { renderIconByStatus } from './../../../helpers';
+import { renderStatusIcon, renderPlatformIcon } from './../../../helpers';
 
 import styles from './styles';
-
-const resolveContext = require.context('../../../../assets', true);  
 
 const CampaignListItem = ({ campaign, classes }) => (
   <div>
@@ -19,7 +17,7 @@ const CampaignListItem = ({ campaign, classes }) => (
         <Grid item container justify="space-between"> 
           <Grid item>
             { 
-              renderIconByStatus(campaign.status, classes) 
+              renderStatusIcon(campaign.status, classes) 
             }
           </Grid>
           <Grid item>         
@@ -33,8 +31,8 @@ const CampaignListItem = ({ campaign, classes }) => (
                 Object.keys(campaign.platforms).map(platform => (
                   <li key={ platform } >
                     <img className={ classes.platformIcon } 
-                      alt={ platform}
-                      src={ resolveContext(`./${platform}.svg`) }/>
+                      alt={ platform }
+                      src={ renderPlatformIcon(platform) }/>
                   </li>
                 ))
               }
