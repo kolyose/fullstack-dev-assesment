@@ -5,7 +5,7 @@ import { getCampaigns } from './../../store/actions';
 import CampaignsList from './list';
 import Spinner from './../spinner';
 
-class Campaigns extends Component {
+export class Campaigns extends Component {
   componentDidMount() {
     const { campaigns } = this.props;
     if (!campaigns || !campaigns.length) {
@@ -26,7 +26,7 @@ class Campaigns extends Component {
 }
 
 Campaigns.propTypes = {
-  campaigns: PropTypes.arrayOf(PropTypes.object).isRequired,
+  campaigns: PropTypes.arrayOf(PropTypes.object),
   isLoading: PropTypes.bool,
 }
 
