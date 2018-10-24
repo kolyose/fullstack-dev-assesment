@@ -1,0 +1,187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CampaignsListItem/> render() renders the component 1`] = `
+<CampaignListItem
+  campaign={
+    Object {
+      "goal": "Increase Reach",
+      "id": 100000001,
+      "name": "Test Ad 1",
+      "platforms": Object {
+        "facebook": Object {
+          "creatives": Object {
+            "description": "DOP SuperHero is where all DevOps is going to happen in the future, join the revolution today!",
+            "header": "DevOps Made Easy, We Take care of the heavy lifting for you",
+            "image": "img1.jpg",
+            "url": "https://example.io",
+          },
+          "end_date": 1532901600000,
+          "insights": Object {
+            "advanced_kpi_1": 44.5,
+            "advanced_kpi_2": 0.0023,
+            "click_through_rate": 0.09,
+            "clicks": 328,
+            "cost_per_click": 0.88,
+            "impressions": 4503,
+            "nanos_score": 5.7,
+          },
+          "remaining_budget": 12,
+          "start_date": 1530568800000,
+          "status": "Delivering",
+          "target_audiance": Object {
+            "age_range": Array [
+              20,
+              66,
+            ],
+            "genders": Array [
+              "M",
+              "F",
+            ],
+            "interests": Array [
+              "Docker",
+              "Kubernates",
+              "DevOps",
+              "AWS",
+              "Google Cloud Platform",
+              "Ubuntu",
+            ],
+            "languages": Array [
+              "FR",
+              "EN",
+              "DE",
+            ],
+            "locations": Array [
+              "France",
+              "Germany",
+              "Switzerland",
+            ],
+          },
+          "total_budget": 40,
+        },
+        "google": Object {
+          "creatives": Object {
+            "description": "DOP SuperHero is where all DevOps is going to happen in the future, join the revolution today!",
+            "header_1": "DevOps Made Easy",
+            "header_2": "We Take care of the heavy lifting for you",
+            "image": "img2.jpg",
+            "url": "https://example.io",
+          },
+          "end_date": 1532901600000,
+          "insights": Object {
+            "advanced_kpi_1": 3.9,
+            "click_through_rate": 0.013,
+            "clicks": 420,
+            "cost_per_click": 0.99,
+            "impressions": 20436,
+            "website_visits": 378,
+          },
+          "remaining_budget": 24,
+          "start_date": 1530568800000,
+          "status": "Scheduled",
+          "target_audiance": Object {
+            "KeyWords": Array [
+              "Easy DevOps",
+              "DevOps As A Service",
+              "DevOps",
+              "AWS",
+              "Google Cloud Platform",
+              "DevOps Automation",
+              "One Click DevOps",
+              "NoOps",
+            ],
+            "age_range": Array [
+              20,
+              66,
+            ],
+            "genders": Array [
+              "M",
+              "F",
+            ],
+            "languages": Array [
+              "FR",
+              "EN",
+              "DE",
+            ],
+            "locations": Array [
+              "France",
+              "Germany",
+              "Switzerland",
+              "Italy",
+              "Spain",
+              "Belgium",
+              "United Kingdom",
+              "Poland",
+            ],
+          },
+          "total_budget": 36,
+        },
+        "instagram": Object {
+          "creatives": Object {
+            "description": "DOP SuperHero is where all DevOps is going to happen in the future, join the revolution today!",
+            "header": "DevOps Made Easy, We Take care of the heavy lifting for you",
+            "image": "img1.jpg",
+            "url": "https://example.io",
+          },
+          "end_date": 1532901600000,
+          "insights": Object {
+            "advanced_kpi_1": 39,
+            "advanced_kpi_2": 0.00143,
+            "click_through_rate": 0.43,
+            "clicks": 220,
+            "cost_per_click": 1.28,
+            "impressions": 436,
+            "nanos_score": 5.2,
+            "website_visits": 178,
+          },
+          "remaining_budget": 14,
+          "start_date": 1530568800000,
+          "status": "Ended",
+          "target_audiance": Object {
+            "age_range": Array [
+              20,
+              66,
+            ],
+            "genders": Array [
+              "M",
+              "F",
+            ],
+            "interests": Array [
+              "Docker",
+              "Kubernates",
+              "DevOps",
+              "AWS",
+              "Google Cloud Platform",
+              "Ubuntu",
+            ],
+            "languages": Array [
+              "FR",
+              "EN",
+              "DE",
+            ],
+            "locations": Array [
+              "France",
+              "Germany",
+              "Switzerland",
+            ],
+          },
+          "total_budget": 44,
+        },
+      },
+      "status": "Delivering",
+      "total_budget": 120,
+    }
+  }
+  classes={
+    Object {
+      "link": "CampaignListItem-link-1",
+      "paper": "CampaignListItem-paper-2",
+      "platformIcon": "CampaignListItem-platformIcon-5",
+      "platformIconsList": "CampaignListItem-platformIconsList-4",
+      "price": "CampaignListItem-price-3",
+      "statusDelivering": "CampaignListItem-statusDelivering-7",
+      "statusEnded": "CampaignListItem-statusEnded-8",
+      "statusScheduled": "CampaignListItem-statusScheduled-6",
+    }
+  }
+/>
+`;

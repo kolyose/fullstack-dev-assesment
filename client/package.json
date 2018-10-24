@@ -17,6 +17,12 @@
     "redux-logger": "^3.0.6",
     "redux-saga": "^0.16.2"
   },
+  "devDependencies": {
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "enzyme-to-json": "^3.3.4",
+    "redux-mock-store": "^1.5.3"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
