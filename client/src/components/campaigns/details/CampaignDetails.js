@@ -26,7 +26,7 @@ const renderShortDate = milliseconds => {
   return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
 }
 
-class CampaignDetails extends Component {
+export class CampaignDetails extends Component {
   componentDidMount() {
     const { campaign, match } = this.props;
     if (!campaign) {
