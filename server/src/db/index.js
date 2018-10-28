@@ -4,7 +4,11 @@ import Models from './models';
 const { Campaign } = Models;
 
 const connect = async dbPath => {
-  mongoose.connect(dbPath);
+  mongoose.connect(dbPath, { 
+    autoReconnect: true,
+    useCreateIndex: true, 
+    useNewUrlParser: true, 
+  });
   mongoose.connection.on('error', err => {
     throw err;
   });
