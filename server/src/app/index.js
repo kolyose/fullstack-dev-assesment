@@ -1,13 +1,14 @@
 import path from 'path';
 import Koa from 'koa';
 import serve from 'koa-static';
-import router from './router';
+import router from '../router';
 
 const app = new Koa();
 
 // Error logging
 app.on('error', err => {
-  global.console.error(err);
+  // TODO: change logging
+  // global.console.error(err);
 });
 
 // Centralized error handling
