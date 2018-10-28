@@ -8,6 +8,9 @@ RUN npm install --only=production
 RUN mkdir /data
 COPY /data/data.json /data/data.json
 
+RUN mkdir /data/logs
+VOLUME ['/usr/src/app/data/logs']
+
 RUN mkdir /src
 VOLUME ['/usr/src/app/src']
 

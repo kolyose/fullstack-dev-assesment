@@ -2,13 +2,13 @@ import path from 'path';
 import Koa from 'koa';
 import serve from 'koa-static';
 import router from '../router';
+import logger from '../logger';
 
 const app = new Koa();
 
 // Error logging
-app.on('error', err => {
-  // TODO: change logging
-  // global.console.error(err);
+app.on('error', (err, ctx) => {    
+  logger.error(`${err} - ${ctx.method} ${ctx.url}`);
 });
 
 // Centralized error handling
@@ -24,6 +24,20 @@ app.use(async (ctx, next) => {
 
 // Static files
 app.use(serve(path.resolve('./public')));
+
+// Logging
+app.use(async (ctx, next) => {
+  await next();
+  logger.info(`${ctx.method} ${ctx.url} - ${ctx.response.status} ${ctx.response.message} - ${ctx.response.get('X-Response-Time')}`);
+});
+
+// X-Response-Time
+app.use(async (ctx, next) => {
+  const start = Date.now();
+  await next();
+  const end = Date.now();
+  ctx.set('X-Response-Time', `${end - start}ms`);
+});
 
 app.use(async (ctx, next) => {
   ctx.set('Access-Control-Allow-Origin', '*');

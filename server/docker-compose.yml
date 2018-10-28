@@ -6,9 +6,11 @@ services:
     restart: unless-stopped
     environment:
       - "DB_PATH=mongodb://mongo:27017/nanos"
+      - "NODE_ENV=production"
     volumes:
       - ./src:/usr/src/app/src
       - ./public:/usr/src/app/public
+      - ./data/logs:/usr/src/app/data/logs
     ports: 
       - "8000:8000"
     depends_on: 
