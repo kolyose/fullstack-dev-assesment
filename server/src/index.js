@@ -6,20 +6,29 @@ import app from './app';
 
 const readFile = util.promisify(fs.readFile);
 
+let server;
+const shutdown = () => {
+  if (db) 
+    db.disconnect();
+
+  if (server) 
+    server.close();
+}
+
 (async function main() {
   try {
     await db.connect(config.DB_PATH);   
 
-    // pre-poppulate DB with mocked data
+    // pre-populate DB with mocked data
     await db.reset(); 
     const seedFile = await readFile('/../data/data.json');
     const campaignsToSeed = JSON.parse(seedFile);
     await db.seedCampaigns(campaignsToSeed);
 
-    app.listen(config.PORT);
+    server = app.listen(config.PORT);
    
   } catch (e) {    
-    db.disconnect();
-    throw e;
+    shutdown();
+    console.error(e);
   }
 })();
